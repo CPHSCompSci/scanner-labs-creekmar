@@ -2,8 +2,6 @@
 //www.apluscompsci.com
 //Name -
 
-import java.util.Scanner;
-import static java.lang.System.*;
 
 public class LineCounter
 {
@@ -16,25 +14,28 @@ public class LineCounter
 
    public LineCounter(String s)
    {
+	   this.line = s;
    }
 
 	public void setLine(String s)
 	{
+		this.line = s;
 	}
 
 	public int getCount()
 	{
-		int count=0;	
+		String[] numbers = this.line.split(" ");
+		int count=numbers.length;	
 		return count;
 	}
 
 	public String getLine()
 	{
-		return "";
+		return line;
 	}
 
 	public String toString()
 	{
-		return getLine();
+		return getLine() + "\nCount: " + getCount();
 	}
 }

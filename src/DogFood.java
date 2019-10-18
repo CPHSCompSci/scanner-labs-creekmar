@@ -9,15 +9,21 @@ import java.lang.Math;
 public class DogFood
 {
    private double amount;
+   private double cups;
+   private String line;
 
    public DogFood()
    {		
+	   this.line = "";
+		cups = 0;
+		amount = 0;
    }
 
    public DogFood(String line)
    {
-		Scanner chopper = new Scanner(line);
-		double cups = 0;
+		this.line = line;
+		cups = 0;
+		amount = 0;
 
 		//calc code goes here
 
@@ -25,11 +31,11 @@ public class DogFood
 
    public double getAmount()
    {
-   	return 0;
+   	return amount;
    }
 
 	public String toString()
 	{
-		return "";
+		return this.amount + " of the 10 pound bags are needed.";
 	}
 }
