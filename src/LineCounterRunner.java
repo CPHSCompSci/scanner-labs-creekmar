@@ -3,15 +3,19 @@
 //Name -
 
 import java.util.Scanner;
-import static java.lang.System.*;  
+import java.io.File;
+import java.io.FileNotFoundException; 
 
 public class LineCounterRunner
 {
-   public static void main( String args[] )
+   public static void main( String args[] ) throws FileNotFoundException
    {	
-	   Scanner scan = new Scanner(System.in);
-	   System.out.println("Input a set of numbers, separating each number with a space:");
-	   LineCounter num = new LineCounter(scan.nextLine());
-	   System.out.println(num.toString());
+	   Scanner scan = new Scanner(new File("LineCounter.txt"));
+	   for(;scan.hasNext();)
+	   {
+		   String line = scan.nextLine();
+		   LineCounter lc = new LineCounter(line);
+		   System.out.println(lc.toString());
+	   }
 	}
 }

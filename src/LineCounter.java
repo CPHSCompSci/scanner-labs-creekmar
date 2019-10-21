@@ -14,7 +14,7 @@ public class LineCounter
 
    public LineCounter(String s)
    {
-	   this.line = s;
+	   setLine(s);
    }
 
 	public void setLine(String s)
