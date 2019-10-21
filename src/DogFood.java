@@ -31,7 +31,36 @@ public class DogFood
 
    public double getAmount()
    {
+	   double tcups = numcups()*7;
+	   amount = tcups/10+1;
    	return amount;
+   }
+   
+   public double numcups()
+   {
+	   double cups = 0;
+	   String[] pounds = line.split(" ");
+	   for(int i = 0; i<pounds.length; i++)
+	   {
+		   int weight = Integer.parseInt(pounds[i]);
+		   if(weight>=2 && weight<=4)
+			   cups+=0.5;
+		   if(weight>=5 && weight<=7)
+			   cups+=1;
+		   if(weight>=8 && weight<=9)
+			   cups+=1.5;
+		   if(weight>=10 && weight<=19)
+			   cups+=2;
+		   if(weight>=20 && weight<=39)
+			   cups+=3.5;
+		   if(weight>=40 && weight<=59)
+			   cups+=4.5;
+		   if(weight>=60 && weight<=79)
+			   cups+=6;
+		   if(weight>=80)
+			   cups+=7.5;
+	   }
+	   return cups;
    }
 
 	public String toString()
