@@ -17,7 +17,7 @@ public class OddEvenCounter
 
    public OddEvenCounter(String s)
    {
-	   this.line = s;
+	   setLine(s);
    }
 
 	public void setLine(String s)
